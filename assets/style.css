@@ -134,8 +134,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-body {
-}
+
 section {
   margin-block: 6em;
 }
@@ -195,7 +194,6 @@ header {
   position: relative;
 }
 .banner-img {
-  display: none;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -203,12 +201,11 @@ header {
   object-fit: cover;
   object-position: center;
 }
-img.active {
-  display: block;
-}
+
 /* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
 /* Gestion des fleches du carrousel */
 #banner .arrow {
+  cursor: pointer;
   position: absolute;
 }
 .arrow:hover {
