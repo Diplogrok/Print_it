@@ -26,6 +26,12 @@ const dot = document.querySelectorAll(".dot");
 const nbDot = dot.length;
 let countDot = 0;
 
+/**
+ * Modifie le dot "selected" au clic sur la flèche de droite
+ * @constructor
+ * @param {nextDot} fonction de déplacement du dot "selected" grâce à l'API classList (remove/add)
+ */
+
 function nextDot() {
   dot[countDot].classList.remove("dot_selected");
   if (countDot < nbDot - 1) {
@@ -35,14 +41,33 @@ function nextDot() {
   }
 
   dot[countDot].classList.add("dot_selected");
+
+  /**
+   * Modifie le slide au clic sur la flèche droite
+   * @param {setAttribute} permet de récupérer le dossier de stockage des images + en determiner l'ordre via le tableau JS "Slides"
+   */
+
   items.setAttribute(
     "src",
     "./assets/images/slideshow/" + slides[countDot].image
   );
+
+  /**
+   * Modifie la TagLine au clic sur la flèche droite
+   */
+
   description.innerHTML = slides[countDot].tagLine;
 }
 
+/**
+ * Rend la flèche droite intéractive au clic
+ */
+
 right.addEventListener("click", nextDot);
+
+/**
+ * Opérations similaire aux précédente au clic sur la flèche gauche
+ */
 
 function previousDot() {
   dot[countDot].classList.remove("dot_selected");
